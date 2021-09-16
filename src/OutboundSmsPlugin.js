@@ -2,6 +2,7 @@ import React from 'react';
 import { VERSION } from '@twilio/flex-ui';
 import { FlexPlugin } from 'flex-plugin';
 import MaterialButton from './components/Button.jsx'
+import BoxComponent from './components/Box.jsx';
 import CustomTaskListContainer from './components/CustomTaskList/CustomTaskList.Container';
 import reducers, { namespace } from './states';
 
@@ -31,7 +32,7 @@ export default class OutboundSmsPlugin extends FlexPlugin {
       flex.AgentDesktopView
       .Panel1
       .Content
-      .add(<MaterialButton key="button-test"/>, options);
+      .add(<BoxComponent key="button-test"/>, options);
   }
 
   /**
