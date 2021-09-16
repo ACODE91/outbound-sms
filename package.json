@@ -6,9 +6,12 @@
     "postinstall": "flex-plugin pre-script-check"
   },
   "dependencies": {
+    "@emotion/react": "^11.4.1",
+    "@emotion/styled": "^11.3.0",
+    "@mui/material": "^5.0.0",
     "flex-plugin-scripts": "4.1.3",
-    "react": "16.5.2",
-    "react-dom": "16.5.2"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@twilio/flex-ui": "^1",

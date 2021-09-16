@@ -1,7 +1,7 @@
 import React from 'react';
 import { VERSION } from '@twilio/flex-ui';
 import { FlexPlugin } from 'flex-plugin';
-
+import MaterialButton from './components/Button.jsx'
 import CustomTaskListContainer from './components/CustomTaskList/CustomTaskList.Container';
 import reducers, { namespace } from './states';
 
@@ -27,6 +27,11 @@ export default class OutboundSmsPlugin extends FlexPlugin {
       .Panel1
       .Content
       .add(<CustomTaskListContainer key="OutboundSmsPlugin-component" />, options);
+
+      flex.AgentDesktopView
+      .Panel1
+      .Content
+      .add(<MaterialButton key="button-test"/>, options);
   }
 
   /**
