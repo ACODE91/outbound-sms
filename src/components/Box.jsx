@@ -3,12 +3,16 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import { Manager } from "@twilio/flex-ui";
+import SendIcon from "@mui/icons-material/Send";
+import Select from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
+import InputLabel from "@mui/material/InputLabel";
 
 const serviceBaseUrl = "sepia-lapwing-2185.twil.io";
 
 export default function BoxComponent() {
   const [phoneNumber, setPhoneNumber] = useState("");
-  const [textBody, setTextBody] = useState("");
+  const [outboundType, setOutboundType] = useState("sms");
 
   async function handleSendOutboundSMS() {
     const manager = Manager.getInstance();
@@ -35,6 +39,7 @@ export default function BoxComponent() {
   return (
     <Box component="span" sx={{ p: 2, border: "1px dashed grey" }}>
       <div>
+        <div>Create an Outbound SMS Session</div>
         <TextField
           required
           id="outlined-required"
@@ -43,10 +48,19 @@ export default function BoxComponent() {
             setPhoneNumber(e.target.value);
           }}
         />
-        <p>Please enter outbound Phone Number with Country Code.</p>
+        <p>
+          Please enter outbound Phone Number with Country Code. *Do not include
+          spaces or dashes.
+        </p>
       </div>
-      <Button onClick={handleSendOutboundSMS.bind(handleSendOutboundSMS)}>
-        Create Session
+      <Button
+        variant="outlined"
+        color="success"
+        size="small"
+        endIcon={<SendIcon />}
+        onClick={handleSendOutboundSMS.bind(handleSendOutboundSMS)}
+      >
+        Create
       </Button>
     </Box>
   );
