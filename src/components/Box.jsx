@@ -4,15 +4,11 @@ import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import { Manager } from "@twilio/flex-ui";
 import SendIcon from "@mui/icons-material/Send";
-import Select from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
-import InputLabel from "@mui/material/InputLabel";
 
 const serviceBaseUrl = "sepia-lapwing-2185.twil.io";
 
 export default function BoxComponent() {
   const [phoneNumber, setPhoneNumber] = useState("");
-  const [outboundType, setOutboundType] = useState("sms");
 
   async function handleSendOutboundSMS() {
     const manager = Manager.getInstance();
